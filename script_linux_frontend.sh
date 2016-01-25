@@ -142,12 +142,19 @@ if [[ $resposta =~ "x" ]]; then
   #Install Elementary OS extras
   sudo apt-add-repository ppa:versable/elementary-update
   sudo apt-get update
-
-  sudo apt-get install elementary-desktop elementary-tweaks
+  sudo apt-get install wingpanel-slim indicator-synapse
+  #instalando Tweaks
+  sudo add-apt-repository ppa:mpstark/elementary-tweaks-daily
+  sudo apt-get update
+  sudo apt-get install elementary-tweaks 
+  #instalando tema numix
+  sudo add-apt-repository ppa:numix/ppa
+  sudo apt-get update
+  sudo apt-get install numix-gtk-theme numix-icon-theme numix-icon-theme-circle numix-plank-theme 
+  #instalando outros temas
   sudo apt-get install elementary-dark-theme elementary-plastico-theme elementary-whit-e-theme elementary-harvey-theme
   sudo apt-get install elementary-elfaenza-icons elementary-nitrux-icons
   sudo apt-get install elementary-plank-themes
-  sudo apt-get install wingpanel-slim indicator-synapse
 fi
 
 if [[ $resposta =~ "z" ]]; then
