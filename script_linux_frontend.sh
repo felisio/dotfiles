@@ -18,7 +18,7 @@ resposta=$(zenity  --list  --text "Escolha os pacotes que deseja instalar." --ch
     FALSE "g" "Atom"\
     FALSE "h" "Dropbox"\
     FALSE "i" "Google Chromium"\
-    FALSE "j" "Google Chrome"\
+    FALSE "j" "Google Chrome /java8 "\
     FALSE "l" "Git e Gitk"\
     FALSE "m" "Filezilla"\
     FALSE "n" "Office 4"\
@@ -86,6 +86,11 @@ if [[ $resposta =~ "j" ]]; then
   sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
   sudo apt-get update
   sudo apt-get install -y google-chrome-stable
+  
+  #Java8
+  sudo add-apt-repository ppa:webupd8team/java
+  sudo apt-get update
+  sudo apt-get install oracle-java8-installer
 fi
 
 if [[ $resposta =~ "l" ]]; then
